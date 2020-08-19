@@ -16,7 +16,7 @@ private static ArrayList<Item> itemList = new ArrayList<>();
 			System.out.println("3. Delete Item");
 			System.out.println("4. Exit");
 			
-			option = Helper.readInt("Select option > ");
+			option = Helper.readInt("Select ption > ");
 			
 			if(option==1) {
 				addItem();

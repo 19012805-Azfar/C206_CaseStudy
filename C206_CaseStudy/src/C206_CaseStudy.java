@@ -10,7 +10,7 @@ public class C206_CaseStudy {
 			Helper.line(30, "=");
 			System.out.println("1. Users");
 			System.out.println("2. Item");
-			System.out.println("3. Item");
+			System.out.println("3. Items");
 			System.out.println("4. Exit");
 			
 			option = Helper.readInt("Select option > ");
