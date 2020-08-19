@@ -63,6 +63,8 @@ public class C206_CaseStudyTest {
 	public void tearDown() throws Exception {
 		user1 = null;
 		userList = null;
+		item1 = null;
+		itemList = null;
 	
 	}
 
