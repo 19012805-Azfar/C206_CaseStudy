@@ -7,14 +7,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class C206_CaseStudyTest {
-	private static ArrayList<User> userList = userList = new ArrayList<>();
+	private static ArrayList<User> userList;
 	private User user1;
 
 	@Before
 	public void setUp() throws Exception {
 		user1 = new User("jon", 123456, "jon@rp.edu.sg","jon1234");
-		
-		
+		userList = new ArrayList<>();
 	}
 	
 	@Test
@@ -24,7 +23,7 @@ public class C206_CaseStudyTest {
 		assertEquals(1, userList.size());
 		String output = String.format("%-20s %-20s %-20s %-20s\n", "jon","123456","jon@rp.edu.sg","User");
 		
-		assertEquals("Test that user can be displayed from list",output,userList.get(0).toString());
+		assertEquals("",output,userList.get(0).toString());
 	}
 	@Test
 	public void addUserTest() {
