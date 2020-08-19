@@ -4,7 +4,7 @@ public class UserDB {
 	private static ArrayList<User> userList = new ArrayList<>();
 	
 	public static void showMenu() {
-		userList.add(new User("jon",123456,"jon@rp.edu.sg","jon1234"));
+		userList.add(new User("jon",123456,"jon@rp.edu.sg","jon1234","Admin"));
 		int option = 0;
 		while (option != 4) {
 			Helper.line(30, "=");
@@ -60,9 +60,9 @@ public class UserDB {
 		}
 
 	}
-
+	
 	public static void showUsers() {
-		System.out.println(String.format("%-20s %-20s %-20s\n", "Student Name", "Student ID","Student Email"));
+		System.out.println(String.format("%-20s %-20s %-20s %-20s\n", "Student Name", "Student ID","Student Email","Role"));
 		for (int i = 0; i < userList.size(); i++) {
 			System.out.println(userList.get(i).toString());
 		}

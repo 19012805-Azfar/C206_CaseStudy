@@ -4,13 +4,21 @@ public class User {
 	private int id;
 	private String email;
 	private String password;
-	
+	private String role;
 
 	public User(String name, int id, String email, String password) {
 		this.name = name;
 		this.id = id;
 		this.email = email;
 		this.password = password;
+		role = "User";
+	}
+	public User(String name, int id, String email, String password,String role) {
+		this.name = name;
+		this.id = id;
+		this.email = email;
+		this.password = password;
+		this.role = role;
 	}
 	public String getName() {
 		return name;
@@ -24,8 +32,11 @@ public class User {
 	public String getEmail() {
 		return email;
 	}
+	public String getRole() {
+		return role;
+	}
 	public String toString() {
-		String output = String.format("%-20s %-20s %-20s\n", name, id,email);
+		String output = String.format("%-20s %-20s %-20s %-20s\n", name, id,email,role);
 		return output;
 	}
 	
