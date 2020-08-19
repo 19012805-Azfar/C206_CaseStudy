@@ -12,7 +12,7 @@ public class C206_CaseStudyTest {
 
 	@Before
 	public void setUp() throws Exception {
-		user1 = new User("jon", 123456, "jon1234");
+		user1 = new User("jon", 123456, "jon@rp.edu.sg","jon1234");
 	}
 
 	public void showUser() {
