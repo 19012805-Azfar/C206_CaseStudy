@@ -44,16 +44,22 @@ public class UserDB {
 		boolean add = false;
 
 		for (int i = 0; i < userList.size(); i++) {
-			if (userList.get(i).getId() != id) {
-				userList.add(new User(name, id, password));
-				System.out.println("User successfully added!");
-				add = true;
+			if (userList.get(i).getId() == id) {
+				add = false;
 				break;
 			}
+			else {
+				add = true;
+			}
+			
 		}
 
 		if (add == false) {
 			System.out.println("Error! A student with that ID already exists!");
+		}
+		else if(add == true) {
+			userList.add(new User(name, id, password));
+			System.out.println("User successfully added!");
 		}
 
 	}
