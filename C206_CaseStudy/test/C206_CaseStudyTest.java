@@ -16,7 +16,7 @@ public class C206_CaseStudyTest {
 	public void setUp() throws Exception {
 		user1 = new User("jon", 123456, "jon@rp.edu.sg","jon1234");
 		userList = new ArrayList<>();
-		item1 = new Item(1, "Toothbrush", "For brushing teeth", 5, "19-8-2020", "30-8-2020", 1);
+		item1 = new Item(1, "Toothbrush", "It is for brushing teeth", 5, "19-8-2020", "30-8-2020", 1);
 		itemList = new ArrayList<>();
 	}
 	

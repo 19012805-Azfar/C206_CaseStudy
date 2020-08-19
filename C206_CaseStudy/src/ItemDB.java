@@ -42,7 +42,7 @@ private static ArrayList<Item> itemList = new ArrayList<>();
 		String name = Helper.readString("Enter Item name: ");
 		String des = Helper.readString("Enter Item Description: ");
 		int min = Helper.readInt("Enter minimum cost of item : ");
-		String start = Helper.readString("Enter start date(dd-mm-yyyy): ");
+		String start = Helper.readString("Enter Start date(dd-mm-yyyy): ");
 		String end = Helper.readString("Enter end date(dd-mm-yyyy): ");
 		int bidIncrement = Helper.readInt("Enter bid increment: ");
 		

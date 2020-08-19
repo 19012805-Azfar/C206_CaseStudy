@@ -56,7 +56,7 @@ public class Item {
 		return bid_increment;
 	}
 	public String toString() {
-		String output = String.format("%-20s %-20s %-20s %-20s %-20s %-20s %-20s\n", id, name, description, minimum_bid_price, start, end, bid_increment);
+		String output = String.format("%-21s %-20s %-20s %-20s %-20s %-20s %-20s\n", id, name, description, minimum_bid_price, start, end, bid_increment);
 		return output;
 	}
 	
