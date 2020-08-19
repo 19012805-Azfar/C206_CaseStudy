@@ -4,7 +4,7 @@ public class UserDB {
 	private static ArrayList<User> userList = new ArrayList<>();
 	
 	public static void showMenu() {
-		userList.add(new User("jon",123456,"jon1234"));
+		userList.add(new User("jon",123456,"jon@rp.edu.sg","jon1234"));
 		int option = 0;
 		while (option != 4) {
 			Helper.line(30, "=");
@@ -39,33 +39,30 @@ public class UserDB {
 	public static void addUser() {
 		String name = Helper.readString("Enter student name: ");
 		int id = Helper.readInt("Enter student id: ");
+		String email = Helper.readString("Enter student email: ");
 		String password = Helper.readString("Enter password: ");
 
-		boolean add = false;
+		boolean add = true;
 
 		for (int i = 0; i < userList.size(); i++) {
 			if (userList.get(i).getId() == id) {
 				add = false;
 				break;
 			}
-			else {
-				add = true;
-			}
-			
 		}
 
 		if (add == false) {
 			System.out.println("Error! A student with that ID already exists!");
 		}
-		else if(add == true) {
-			userList.add(new User(name, id, password));
+		else {
+			userList.add(new User(name, id, email,password));
 			System.out.println("User successfully added!");
 		}
 
 	}
 
 	public static void showUsers() {
-		System.out.println(String.format("%-20s %-20s\n", "Student Name", "Student ID"));
+		System.out.println(String.format("%-20s %-20s %-20s\n", "Student Name", "Student ID","Student Email"));
 		for (int i = 0; i < userList.size(); i++) {
 			System.out.println(userList.get(i).toString());
 		}
@@ -78,8 +75,9 @@ public class UserDB {
 		for (int i = 0; i < userList.size(); i++) {
 			if (userList.get(i).getId() == id) {
 				userList.remove(i);
-				System.out.println("User successfully deleted!");
+				System.out.println("Student successfully deleted!\n");
 				delete = true;
+				System.out.println("Updated Student List\n");
 				showUsers();
 				break;
 			}
