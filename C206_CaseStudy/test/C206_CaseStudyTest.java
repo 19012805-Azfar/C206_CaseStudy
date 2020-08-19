@@ -7,13 +7,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class C206_CaseStudyTest {
-	private static ArrayList<User> userList;
+	private static ArrayList<User> userList = userList = new ArrayList<>();
 	private User user1;
 
 	@Before
 	public void setUp() throws Exception {
 		user1 = new User("jon", 123456, "jon@rp.edu.sg","jon1234");
-		userList = new ArrayList<>();
+		
+		
 	}
 	
 	@Test
