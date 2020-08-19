@@ -11,6 +11,8 @@ public class C206_CaseStudyTest {
 	private User user1;
 	private Item item1;
 	private static ArrayList<Item> itemList;
+	private static ArrayList<Deal> dealList;
+	private Deal deal1;
 
 	@Before
 	public void setUp() throws Exception {
@@ -18,6 +20,8 @@ public class C206_CaseStudyTest {
 		userList = new ArrayList<>();
 		item1 = new Item(1, "Toothbrush", "For brushing teeth", 5, "19-8-2020", "30-8-2020", 1);
 		itemList = new ArrayList<>();
+		deal1 = new Deal(1234,"AirPods","jack12@gmail.com","bobby34@gmail.com",300.00,"27-8-2020");
+		dealList = new ArrayList<>();
 	}
 	
 	@Test
@@ -35,7 +39,19 @@ public class C206_CaseStudyTest {
 		itemList.add(item1);
 		assertEquals(1,itemList.size());
 		String output = String.format("%-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s\n", "1","Toothbrush","For brushing teeth","5", "19-8-2020", "30-8-2020", "1", "Item");
+		
+		}
+	@Test
+	public void showDeals() {
+		assertNotNull("Test if there is valid user arraylist to display deals", dealList);
+		dealList.add(deal1);
+		assertEquals(1, dealList.size());
+		String output = String.format("%-20s %-20s %-20s %-20s %-20s %-20s\n", 1234,"AirPods","jack12@gmail.com","bobby34@gmail.com",300.00,"27-8-2020");
+		
+		assertEquals("",output,dealList.get(0).toString());
+	
 	}
+	
 	@Test
 	public void addUserTest() {
 
@@ -50,6 +66,15 @@ public class C206_CaseStudyTest {
 		itemList.add(item1);
 		assertEquals("Check that user arraylist size is 1", 1, itemList.size());
 		assertSame("Check that item is added", item1, itemList.get(0));
+	}
+	@Test
+	public void addDealTest() {
+
+		assertNotNull("Check if there is valid deal arraylist to add to", dealList);
+		dealList.add(deal1);
+		assertEquals("Check that deal arraylist size is 1", 1, dealList.size());
+		assertSame("Check that deal is added", deal1, dealList.get(0));
+	
 	}
 	
 	@Test
@@ -68,6 +93,15 @@ public class C206_CaseStudyTest {
 		itemList.remove(0);
 		assertEquals("Test that no items are in the list",0, itemList.size());
 	}
+	@Test
+	public void delDealTest() {
+		dealList.add(deal1);
+		assertEquals("Check that deal arraylist size is 1", 1, dealList.size());
+		assertNotNull("Check if there is valid deal arraylist to delete from",dealList);
+		dealList.remove(0);
+		assertEquals("Test that no deals are in the list",0, dealList.size());
+	}
+
 
 	@After
 	public void tearDown() throws Exception {
@@ -75,6 +109,8 @@ public class C206_CaseStudyTest {
 		userList = null;
 		item1 = null;
 		itemList = null;
+		deal1 = null;
+		dealList = null;
 		
 	}
 

@@ -6,6 +6,10 @@ public class C206_CaseStudy {
 		UserDB.showMenu();
 		
 		ItemDB.showMenu();
+		
+		DealDB.showMenu();
+		
+		
 	}
 
 }
