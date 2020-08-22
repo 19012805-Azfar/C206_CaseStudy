@@ -23,11 +23,21 @@ public class User {
 	public String getName() {
 		return name;
 	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 	public int getId() {
 		return id;
 	}
+	
 	public String getPassword() {
 		return password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getEmail() {
 		return email;
@@ -35,6 +45,7 @@ public class User {
 	public String getRole() {
 		return role;
 	}
+	
 	public String toString() {
 		String output = String.format("%-20s %-20s %-20s %-20s\n", name, id,email,role);
 		return output;
