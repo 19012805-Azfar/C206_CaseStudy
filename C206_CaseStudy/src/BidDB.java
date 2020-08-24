@@ -19,7 +19,9 @@ public class BidDB {
 			System.out.println("1. Add bids");
 			System.out.println("2. Show all bids");
 			System.out.println("3. Delete bids" );
-			System.out.println("4. Exit");
+			System.out.println("4. Update bids");
+			System.out.println("5. Search bids");
+			System.out.println("6. Exit");
 			
 			
 			option = Helper.readInt("Choose an option > ");
@@ -31,6 +33,10 @@ public class BidDB {
 			}else if (option == 3) {
 				deleteBid();
 			}else if (option == 4 ) {
+				updateBid();
+			}else if (option == 5){
+				searchBid();
+			}else if (option == 6) {
 				System.out.println("Thank you for using");
 			}else {
 				System.out.println("Option not found!");
@@ -108,6 +114,55 @@ public class BidDB {
 		
 		if(del = false) {
 			System.out.println("ERROR! ID not found!");
+		}
+		
+	}
+	
+	
+	public static void updateBid() {
+		int id = Helper.readInt("Enter bid ID > ");
+		boolean update = false;
+		
+		for (Bid b : bidList) {
+			if(b.getBidID()== id) {
+				Helper.line(50, "-");
+				int newID = Helper.readInt("Enter new ID > ");
+				String newItem = Helper.readString("Enter new item > ");
+				String newSmail = Helper.readString("Enter new seller email > ");
+				String newBmail = Helper.readString("Enter new buyer email > ");
+				double newPrice = Helper.readDouble("Enter new price > ");
+				
+				b.setBidID(newID);
+				b.setItemName(newItem);
+				b.setsEmail(newSmail);
+				b.setbEmail(newBmail);
+				b.setBidPrice(newPrice);
+				System.out.println("Update successful");
+				showAllBid();
+				update = true;
+				break;
+				
+			}
+			
+		}
+		
+		if(update == false) {
+			System.out.println("Error! No such bid ID found!");
+		}
+	}
+	
+	
+	
+	public static void searchBid() {
+		
+		int S = Helper.readInt("Enter ID you wish to find > ");
+		
+		System.out.println(String.format("%-20s %-20s %-20s %-20s %-20s \n", "bid id", "name", "seller email", "buyer email", "price($)"));
+		String output = " ";
+		for(Bid b : bidList) {
+			if(b.getBidID() == S) {
+				System.out.println(String.format("%-20d %-20s %-20s %-20s %.2f \n", b.getBidID(),b.getItemName(),b.getsEmail(),b.getbEmail(),b.getBidPrice() ));
+			}
 		}
 		
 	}
