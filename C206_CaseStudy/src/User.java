@@ -47,7 +47,7 @@ public class User {
 	}
 	
 	public String toString() {
-		String output = String.format("%-20s %-20s %-20s %-20s\n", name, id,email,role);
+		String output = String.format("%-20s %-20d %-20s %-20s\n", name, id,email,role);
 		return output;
 	}
 	

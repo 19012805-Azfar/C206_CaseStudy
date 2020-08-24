@@ -29,9 +29,9 @@ public class C206_CaseStudyTest {
 		assertNotNull("Test if there is valid user arraylist to display users", userList);
 		userList.add(user1);
 		assertEquals(1, userList.size());
-		String output = String.format("%-20s %-20s %-20s %-20s\n", "jon","123456","jon@rp.edu.sg","User");
+		String output = String.format("%-20s %-20d %-20s %-20s\n", "jon",123456,"jon@rp.edu.sg","User");
 		
-		assertEquals("",output,userList.get(0).toString());
+		assertEquals("Test output is equal to toString()",output,userList.get(0).toString());
 	}
 	@Test
 	public void showItem() {
@@ -101,8 +101,26 @@ public class C206_CaseStudyTest {
 		dealList.remove(0);
 		assertEquals("Test that no deals are in the list",0, dealList.size());
 	}
-
-
+	
+	@Test
+	public void updateUser() {
+		assertNotNull(userList);
+		userList.add(user1);
+		userList.get(0).setName("name");
+		userList.get(0).setPassword("password");
+		assertEquals("Test name was updated successfully","name",userList.get(0).getName());
+		assertEquals("Test password was updated successfully","password",userList.get(0).getPassword());
+	}
+	
+	@Test
+	public void searchUser() {
+		userList.add(user1);
+		String email = "jon";
+		assertTrue("Test email in list contains variable email", userList.get(0).getEmail().contains(email));
+		String output = String.format("%-20s %-20d %-20s %-20s\n", "jon", 123456, "jon@rp.edu.sg","User");
+		assertEquals("Test output is same as toString", output, userList.get(0).toString());
+	}
+	
 	@After
 	public void tearDown() throws Exception {
 		user1 = null;
