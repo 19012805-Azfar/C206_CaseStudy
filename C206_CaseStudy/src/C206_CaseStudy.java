@@ -9,6 +9,7 @@ public class C206_CaseStudy {
 		
 		DealDB.showMenu();
 		
+		BidDB.showMenu();
 		
 	}
 
