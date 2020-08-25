@@ -24,7 +24,7 @@ public class Deal {
 		return itemName;
 	}
 	
-	public String getSellerEmail() {
+	public String getSellerEmail() { 
 		return sellerEmail;
 	}
 	

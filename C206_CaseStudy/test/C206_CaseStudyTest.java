@@ -13,7 +13,7 @@ public class C206_CaseStudyTest {
 	private static ArrayList<Item> itemList;
 	private static ArrayList<Deal> dealList;
 	private Deal deal1;
-	private double transPrice;
+	private double transPrice; 
 	
 
 	@Before

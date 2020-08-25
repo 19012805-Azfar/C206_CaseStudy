@@ -129,7 +129,7 @@ public static void updateDeals() {
 
 
 
-private static void searchDeals() { 
+private static void searchDeals() {  
 	String dealID = Helper.readString("Enter Deal ID > ");
 	String sellerEmail = Helper.readString("Enter seller email > ");
 	String buyerEmail = Helper.readString("Enter buyer email > ");
