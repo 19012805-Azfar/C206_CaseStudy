@@ -59,12 +59,12 @@ public class BidDB {
 		
 		boolean add = false;
 		
-		for(int i = 0; i < bidList.size(); i++) {
+		
 			if(bidList != null) {
 				bidList.add(new Bid(ID, name, sMail, bMail, price));
 				System.out.println("Bid added");
 				add = true;
-				break;
+				
 				
 			}else {
 				add = false;
@@ -73,7 +73,7 @@ public class BidDB {
 				System.out.println("Error! Bid not added");
 			}
 		
-		}
+		
 		
 	}
 	
