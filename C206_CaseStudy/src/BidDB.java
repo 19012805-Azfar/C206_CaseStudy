@@ -11,7 +11,7 @@ public class BidDB {
 		
 		int option = 0;
 		
-		while(option != 4) {
+		while(option != 6) {
 			
 			Helper.line(30,"=");
 			System.out.println("Bids");
