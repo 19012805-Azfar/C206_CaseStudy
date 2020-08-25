@@ -13,6 +13,8 @@ public class C206_CaseStudyTest {
 	private static ArrayList<Item> itemList;
 	private static ArrayList<Deal> dealList;
 	private Deal deal1;
+	private double transPrice;
+	
 
 	@Before
 	public void setUp() throws Exception {
@@ -20,7 +22,7 @@ public class C206_CaseStudyTest {
 		userList = new ArrayList<>();
 		item1 = new Item(1, "Toothbrush", "For brushing teeth", 5, "19-8-2020", "30-8-2020", 1);
 		itemList = new ArrayList<>();
-		deal1 = new Deal(1234,"AirPods","jack12@gmail.com","bobby34@gmail.com",300.00,"27-8-2020");
+		deal1 = new Deal("1234A","AirPods","jack12@gmail.com","bobby34@gmail.com",300.00,"27-8-2020");
 		dealList = new ArrayList<>();
 	}
 	
@@ -46,7 +48,7 @@ public class C206_CaseStudyTest {
 		assertNotNull("Test if there is valid user arraylist to display deals", dealList);
 		dealList.add(deal1);
 		assertEquals(1, dealList.size());
-		String output = String.format("%-20s %-20s %-20s %-20s %-20s %-20s\n", 1234,"AirPods","jack12@gmail.com","bobby34@gmail.com",300.00,"27-8-2020");
+		String output = String.format("%-20s %-20s %-20s %-20s %-20s %-20s\n", "1234A","AirPods","jack12@gmail.com","bobby34@gmail.com",300.00,"27-8-2020");
 		
 		assertEquals("",output,dealList.get(0).toString());
 	
@@ -119,6 +121,29 @@ public class C206_CaseStudyTest {
 		assertTrue("Test email in list contains variable email", userList.get(0).getEmail().contains(email));
 		String output = String.format("%-20s %-20d %-20s %-20s\n", "jon", 123456, "jon@rp.edu.sg","User");
 		assertEquals("Test output is same as toString", output, userList.get(0).toString());
+	}
+	
+	@Test
+	public void updateDeals() {
+		assertNotNull(dealList);
+		dealList.add(deal1);
+		dealList.get(0).setTransPrice(transPrice);
+		dealList.get(0).setCloseDate("dd-mm-yyyy");
+		assertEquals("Test transPrice was updated successfully","transPrice",dealList.get(0).getTransPrice());
+		assertEquals("Test closeDate was updated successfully","dd-mm-yyyy",dealList.get(0).getCloseDate());
+	}
+	
+	@Test
+	public void searchDeals() {
+		dealList.add(deal1);
+		String dealID = "123AB";
+		String sellerEmail = "Mike";
+		String buyerEmail = "Tyson";
+		assertTrue("Test dealID in list contains variable dealID", dealList.get(0).getDealID().contains(dealID));
+		assertTrue("Test sellerEmail in list contains variable email", dealList.get(0).getSellerEmail().contains(sellerEmail));
+		assertTrue("Test BuyerEmail in list contains variable email", dealList.get(0).getBuyerEmail().contains(buyerEmail));
+		String output = String.format("%-20s %-20s %-20s %-20s %-20s %-20s\n", "1234A","AirPods","jack12@gmail.com","bobby34@gmail.com",300.00,"27-8-2020");
+		assertEquals("Test output is same as toString", output, dealList.get(0).toString());
 	}
 	
 	@After

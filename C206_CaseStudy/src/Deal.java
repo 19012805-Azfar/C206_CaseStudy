@@ -1,13 +1,13 @@
 
 //Created by Azfar
 public class Deal {
-	private int dealID;
+	private String dealID;
 	private String itemName;
 	private String sellerEmail;
 	private String buyerEmail;
 	private double transPrice;
 	private String closeDate;
-	public Deal(int dealID, String itemName, String sellerEmail, String buyerEmail, double transPrice, String closeDate) {
+	public Deal(String dealID, String itemName, String sellerEmail, String buyerEmail, double transPrice, String closeDate) {
 		this.dealID = dealID;
 		this.itemName = itemName;
 		this.sellerEmail = sellerEmail;
@@ -16,7 +16,7 @@ public class Deal {
 		this.closeDate = closeDate;
 	}
 	
-	public int getDealID() {
+	public String getDealID() {
 		return dealID;
 	}
 	
@@ -36,8 +36,19 @@ public class Deal {
 		return transPrice;
 	}
 	
+	public void setTransPrice(double transPrice) {
+		this.transPrice = transPrice;
+	}
+	public void setDealID(String dealID) {
+		this.dealID = dealID;
+	}
+	
 	public String getCloseDate() {
 		return closeDate;
+	}
+	
+	public void setCloseDate(String closeDate) {
+		this.closeDate = closeDate;
 	}
 	
 	public String toString() {
