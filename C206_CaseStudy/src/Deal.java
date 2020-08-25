@@ -20,7 +20,7 @@ public class Deal {
 		return dealID;
 	}
 	
-	public String getItemName() {
+	public String getItemName() { 
 		return itemName;
 	}
 	

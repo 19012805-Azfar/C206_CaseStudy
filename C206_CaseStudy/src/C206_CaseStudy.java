@@ -7,7 +7,7 @@ public class C206_CaseStudy {
 		
 		ItemDB.showMenu();
 		
-		DealDB.showMenu();
+		DealDB.showMenu(); 
 		
 		BidDB.showMenu();
 		

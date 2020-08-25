@@ -123,7 +123,7 @@ public class C206_CaseStudyTest {
 		assertEquals("Test output is same as toString", output, userList.get(0).toString());
 	}
 	
-	@Test
+	@Test 
 	public void updateDeals() {
 		assertNotNull(dealList);
 		dealList.add(deal1);
