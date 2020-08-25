@@ -133,7 +133,7 @@ private static void searchDeals() {
 	String dealID = Helper.readString("Enter Deal ID > ");
 	String sellerEmail = Helper.readString("Enter seller email > ");
 	String buyerEmail = Helper.readString("Enter buyer email > ");
-	System.out.println(String.format("%-20s %-20s %-20s %-20s\n", "Student Name", "Student ID", "Student Email", "Role"));
+	System.out.println(String.format("%-20s %-20s %-20s %-20s %-20s %-20s\n", "Deal ID", "Item name", "seller email", "buyer email", "transaction price", "close date"));
 	for (Deal d : dealList) {
 		if (d.getDealID().contains(dealID) || d.getBuyerEmail().contains(buyerEmail) || d.getSellerEmail().contains(sellerEmail)) {
 			System.out.println(d.toString());
