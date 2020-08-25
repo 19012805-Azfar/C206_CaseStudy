@@ -146,6 +146,31 @@ public class C206_CaseStudyTest {
 		assertEquals("Test output is same as toString", output, dealList.get(0).toString());
 	}
 	
+	@Test
+	public void updateItems() {
+		assertNotNull(itemList);
+		itemList.add(item1);
+		itemList.get(0).setName("name");
+		itemList.get(0).setDescription("description");
+		itemList.get(0).setEnd("dd/mm/yyyy");
+		itemList.get(0).setBid_increment(1);
+		assertEquals("Test name was updated successfully","name",itemList.get(0).getName());
+		assertEquals("Test description was updated successfully","description",itemList.get(0).getDescription());
+		assertEquals("Test end date was updated successfully","dd/mm/yyyy",itemList.get(0).getEnd());
+		assertEquals("Test bid increment was updated successfully",1,itemList.get(0).getBid_increment());
+	}
+	@Test
+	public void searchItems() {
+		itemList.add(item1);
+		String name = "toothbrush";
+		String des = "For brushing teeth";
+		assertTrue("Test name in list contains variable name", itemList.get(0).getName().equalsIgnoreCase(name));
+		assertTrue("Test description in list contains variable description", itemList.get(0).getDescription().equalsIgnoreCase(des));
+		String output = String.format("%-20d %-20s %-20s %-20d %-20s %-20s %-20d\n", 1, "Toothbrush", "For brushing teeth", 5, "19-8-2020", "30-8-2020", 1);
+		assertEquals("Test output is same as toString", output, itemList.get(0).toString());
+		
+	}
+	
 	@After
 	public void tearDown() throws Exception {
 		user1 = null;

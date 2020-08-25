@@ -55,6 +55,9 @@ public class Item {
 	public int getBid_increment() {
 		return bid_increment;
 	}
+	public void setBid_increment(int bid_increment) {
+		this.bid_increment = bid_increment;
+	}
 	public String toString() {
 		String output = String.format("%-20s %-20s %-20s %-20s %-20s %-20s %-20s\n", id, name, description, minimum_bid_price, start, end, bid_increment);
 		return output;
