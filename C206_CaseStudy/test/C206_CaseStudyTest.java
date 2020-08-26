@@ -10,8 +10,10 @@ public class C206_CaseStudyTest {
 	private static ArrayList<User> userList;
 	private User user1;
 	private Item item1;
+	private Bid bid1;
 	private static ArrayList<Item> itemList;
 	private static ArrayList<Deal> dealList;
+	private static ArrayList<Bid> bidList;
 	private Deal deal1;
 	private double transPrice; 
 	
@@ -24,6 +26,8 @@ public class C206_CaseStudyTest {
 		itemList = new ArrayList<>();
 		deal1 = new Deal("1234A","AirPods","jack12@gmail.com","bobby34@gmail.com",300.00,"27-8-2020");
 		dealList = new ArrayList<>();
+		bid1 = new Bid(1, "Textbook", "txtbks@gmail.com", "txtbkb@gmail.com", 5.55);
+		bidList= new ArrayList<>();
 	}
 	
 	@Test
@@ -53,6 +57,15 @@ public class C206_CaseStudyTest {
 		assertEquals("",output,dealList.get(0).toString());
 	
 	}
+	@Test
+	public void showAllBid() {
+		assertNotNull("Test if there is valid bidID to display bids", bidList);
+		bidList.add(bid1);
+		assertEquals(1, bidList.size());
+		String output = String.format("%-20s %-20s %-20s %-20s %-20s %-20s\n", 1, "Textbook", "txtbks@gmail.com", "txxtbkb@gmail.com",5.55);
+		
+		assertEquals("",output,bidList.get(0).toString());
+	}
 	
 	@Test
 	public void addUserTest() {
@@ -80,6 +93,16 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
+	public void addBidTest() {
+
+		assertNotNull("Check if there is valid bid arraylist to add to", bidList);
+		bidList.add(bid1);
+		assertEquals("Check that bid arraylist size is 1", 1, bidList.size());
+		assertSame("Check that bid is added", bid1, bidList.get(0));
+	
+	}
+	
+	@Test
 	public void delUserTest() {
 		userList.add(user1);
 		assertEquals("Check that user arraylist size is 1", 1, userList.size());
@@ -102,6 +125,15 @@ public class C206_CaseStudyTest {
 		assertNotNull("Check if there is valid deal arraylist to delete from",dealList);
 		dealList.remove(0);
 		assertEquals("Test that no deals are in the list",0, dealList.size());
+	}
+	
+	@Test
+	public void delBidTest() {
+		bidList.add(bid1);
+		assertEquals("Check that bid arraylist size is 1", 1, bidList.size());
+		assertNotNull("Check if there is valid bid arraylist to delete from",bidList);
+		bidList.remove(0);
+		assertEquals("Test that no bid are in the list",0, bidList.size());
 	}
 	
 	@Test
@@ -170,6 +202,26 @@ public class C206_CaseStudyTest {
 		assertEquals("Test output is same as toString", output, itemList.get(0).toString());
 		
 	}
+	
+	@Test
+	public void searchBid() {
+		bidList.add(bid1);
+		int bidID = 1;
+		String itemName = "Textbook";
+		String sEmail = "txtbks@gmail.com";
+		String bEmail = "txtbkb@gmail.com";
+		double price = 5.55;
+		assertTrue("Test bidID in list contains variable bidID", bidList.get(0).getBidID() == bidID);
+		assertTrue("Test itemName in list contain variable itemName", bidList.get(0).getItemName().contains(itemName));
+		assertTrue("Test sellerEmail in list contains variable email", bidList.get(0).getsEmail().contains(sEmail));
+		assertTrue("Test BuyerEmail in list contains variable email", bidList.get(0).getbEmail().contains(bEmail));
+		assertTrue("Test price in list contains variable bidPrice", bidList.get(0).getBidPrice() == price);
+		
+		String output = String.format("%-20d %-20s %-20s %-20s %-20s %.2f\n", 1,"Textbook","txtbks@gmail.com","txtbkb@gmail.com",5.55);
+		assertEquals("Test output is same as toString", output, bidList.get(0).toString());
+	}
+	
+	
 	
 	@After
 	public void tearDown() throws Exception {
